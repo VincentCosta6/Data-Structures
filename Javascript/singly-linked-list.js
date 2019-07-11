@@ -19,7 +19,7 @@ class SinglyLinkedList {
     }
 
     add(value) {
-        this.addNode(new Node(value));
+        this.addNode(new SingleListNode(value));
     }
 
     addNodeAtHead(node) {
@@ -36,7 +36,7 @@ class SinglyLinkedList {
     }
 
     addAtHead(value) {
-        this.addNodeAtHead(new Node(value));
+        this.addNodeAtHead(new SingleListNode(value));
     }
 
     addNodeAt(node, index) {
@@ -61,7 +61,7 @@ class SinglyLinkedList {
     }
 
     addAt(value, index) {
-        this.addNodeAt(new Node(value, index));
+        this.addNodeAt(new SingleListNode(value, index));
     }
 
     getNode(index) {
@@ -109,7 +109,7 @@ class SinglyLinkedList {
     }
 
     set(value, index) {
-        this.setNode(new Node(value), index);
+        this.setNode(new SingleListNode(value), index);
     }
 
     removeHead() {
@@ -207,23 +207,11 @@ class SinglyLinkedList {
     }
 }
 
-class Node {
+class SingleListNode {
     constructor(value, next = null) {
         this.value = value;
         this.next = next;
     }
 }
-
-let list = new SinglyLinkedList();
-
-list.add(1);
-list.add(2);
-list.add(3);
-
-list.print();
-
-let lister = list.reverseCopy();
-
-lister.print();
 
 module.exports = SinglyLinkedList;

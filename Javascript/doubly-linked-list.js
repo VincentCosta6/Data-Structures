@@ -20,7 +20,7 @@ class DoublyLinkedList {
     }
 
     addValueAtHead(value) {
-        this.addNodeAtHead(new Node(value));
+        this.addNodeAtHead(new DoubleListNode(value));
     }
 
     addNode(node) {
@@ -38,7 +38,7 @@ class DoublyLinkedList {
     }
 
     add(value) {
-        this.addNode(new Node(value));
+        this.addNode(new DoubleListNode(value));
     }
 
     addNodeAtIndex(index, node) {
@@ -54,7 +54,7 @@ class DoublyLinkedList {
     }
 
     addValueAtIndex(index, value) {
-        this.addNodeAtIndex(index, new Node(value));
+        this.addNodeAtIndex(index, new DoubleListNode(value));
     }
 
     getNode(index) {
@@ -213,25 +213,12 @@ class DoublyLinkedList {
     }
 }
 
-class Node {
+class DoubleListNode {
     constructor(value, prev = null, next = null) {
         this.value = value;
         this.prev = prev;
         this.next = next;
     }
 }
-
-let list = new DoublyLinkedList();
-
-list.add(1);
-list.add(2);
-list.add(3);
-
-list.printFromHead();
-
-//////////////////////////////////////////
-list.reverse();
-
-list.printFromHead();
 
 module.exports = DoublyLinkedList;
